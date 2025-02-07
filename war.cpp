@@ -1,3 +1,11 @@
+// Name: Vansh Patel
+// Class (CECS 325-02)
+// Project Name (Program 1 - One Card War )
+// Due Date (2/13/2025)
+//
+// I certify that this program is my own original work. I did not copy any part of this program from
+// any other source. I further certify that I typed each and every line of code in this program.
+
 #include <iostream>
 #include "deck.h"
 #include "card.h"
@@ -21,6 +29,7 @@ int main() {
     cout << "\n";
     int player1Score = 0;
     int player2Score = 0;
+    int playerTie = 0;
     for (int i = 0; i < 26; i++) {
         cout << "Game " << i + 1 << "\n";
         cout << "--------------------------------\n";
@@ -41,13 +50,14 @@ int main() {
             player2Score++;
         } else {
             cout << "Tie game";
+            playerTie++;
         }
         cout << "\n";
     }
     cout << "------Final Stats-------\n";
     cout << "\t" << player1 << " vs." << player2 << "\n";
     cout <<"Wins: \t" << player1Score << "\t\t" << player2Score << "\n";
-    cout << "Losses: " << 26 - player1Score << "\t\t" << 26 - player2Score << "\n";
-    cout << "Ties: \t" << 26 - player1Score - player2Score << "\t\t" << 26 - player1Score - player2Score << "\n";
+    cout << "Losses: " << 26 - player1Score - playerTie << "\t\t" << 26 - player2Score - playerTie << "\n";
+    cout << "Ties: \t" << playerTie << "\t\t" << playerTie << "\n";
     return 0;
 }
