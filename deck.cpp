@@ -1,5 +1,6 @@
 #include <iostream>
 #include "deck.h"
+using namespace std;
 
 
 Deck::Deck() {
@@ -24,20 +25,22 @@ Card Deck::deal () {
 void Deck::displayDeck() {
     // display all cards in the deck
     for (int i = 0; i < 52; i++) {
-        if (i % 13 == 0 && i != 0) {
-            std::cout << "\n";
+        if (i % 13 == 0 && i != 0) {//trying to get it to look like the example by stopping after every 13 cards
+            cout << "\n";
         }
         cards[i].displayCard();
-        std::cout << ",";
+        if (i != 51){ //no comma after KH
+            cout << ",";}
     }
+    cout << "\n";//to make space for the shuffled deck
 }
 
 void Deck::shuffle() {
     // shuffle the deck, without using built-in functions like random_shuffle, use a random generator
     for (int i = 0; i < 52; i++) {
         int randomIdx = rand() % 52; // get a random index between 0 and 51
-        Card temp = cards[i]; // store the card at index i in a temp variable
-        cards[i] = cards[randomIdx]; // swap the card at index i with the card at the random index
+        Card temp = cards[i];// store the card at index i in a temp variable
+        cards[i] = cards[randomIdx];// swap the card at index i with the card at the random index
         cards[randomIdx] = temp; // swap the card at the random index with the card stored in the temp variable
     }
 }

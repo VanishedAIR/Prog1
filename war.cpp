@@ -20,7 +20,7 @@ int main() {
     string player2;
     cout << "Enter the name of the second player: ";
     cin >> player2;
-    cout << "Original Deck \n";
+    cout << "\nOriginal Deck \n";
     deck.displayDeck();
     cout << "\n";
     deck.shuffle();
@@ -45,10 +45,12 @@ int main() {
         if (result == 1) {
             cout << player1 << "=> Winner\n";
             player1Score++;
-        } else if (result == -1) {
+        } 
+        else if (result == -1) {
             cout << player2 << "=> Winner\n";
             player2Score++;
-        } else {
+        } 
+        else {
             cout << "Tie game";
             playerTie++;
         }

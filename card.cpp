@@ -31,9 +31,50 @@ int Card::compareCard(Card otherCard) {
     if (otherCard.rank == rank) {
         return 0;
     }
+    
+    // if this card is an A
+    if (rank == 'A') {
+        return -1;  // A loses to everything except another A
+    }
+    
+    //if other card is an A
+    if (otherCard.rank == 'A') {
+        return 1; // any card beats an A
+    }
+
+    //since comparision is done by ascii values its weird for face cards
+    if (rank == 'K') {
+        return 1;    // k>everything except another K
+    }
+    if (otherCard.rank == 'K') {
+        return -1;   // everything loses to K
+    }
+    if (rank == 'Q') {
+        return 1;    // Q beats everything except K
+    }
+    if (otherCard.rank == 'Q') {
+        return -1;   // Everything except K loses to Q
+    }
+    if (rank == 'J') {
+        return 1;    // J beats everything except K and Q
+    }
+    if (otherCard.rank == 'J') {
+        return -1;   // Everything except K and Q loses to J
+    }
+
+    //special case for T = '10'
+    if (rank == 'T' && (otherCard.rank >= '2' && otherCard.rank <= '9')) {
+        return 1;    // T beats 2-9
+    }
+    if (otherCard.rank == 'T' && (rank >= '2' && rank <= '9')) {
+        return -1;   // 2-9 lose to T
+    }
+    
+    //other stuff
     if (otherCard.rank < rank) {
         return 1;
-    } else {
+    } 
+    else {
         return -1;
     }
 };
