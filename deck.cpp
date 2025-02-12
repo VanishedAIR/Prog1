@@ -37,6 +37,7 @@ void Deck::displayDeck() {
 
 void Deck::shuffle() {
     // shuffle the deck, without using built-in functions like random_shuffle, use a random generator
+    srand(time(0));
     for (int i = 0; i < 52; i++) {
         int randomIdx = rand() % 52; // get a random index between 0 and 51
         Card temp = cards[i];// store the card at index i in a temp variable

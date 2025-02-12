@@ -12,8 +12,8 @@ Card::Card(char s, char r) {
 
 Card::Card() {
     // default constructor needed for array
-    suit = 'X';
-    rank = 'X';
+    suit = 'A';
+    rank = 'S';
 };
 
 void Card::displayCard() {

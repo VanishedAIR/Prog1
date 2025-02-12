@@ -57,7 +57,7 @@ int main() {
         cout << "\n";
     }
     cout << "------Final Stats-------\n";
-    cout << "\t" << player1 << " vs." << player2 << "\n";
+    cout << "\t" << player1 << " vs. " << player2 << "\n";
     cout <<"Wins: \t" << player1Score << "\t\t" << player2Score << "\n";
     cout << "Losses: " << 26 - player1Score - playerTie << "\t\t" << 26 - player2Score - playerTie << "\n";
     cout << "Ties: \t" << playerTie << "\t\t" << playerTie << "\n";
